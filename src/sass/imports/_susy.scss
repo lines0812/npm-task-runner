@@ -1,0 +1,51 @@
+@import "./node_modules/susy/sass/susy";
+
+$susy: (
+    columns: 10,
+    container: 1200px,
+    gutters: 1/4,
+    global-box-sizing: border-box,
+    debug: (image: hide)
+);
+
+@include border-box-sizing;
+
+main {
+    @include container;
+}
+
+header, article, aside {
+  margin-bottom: gutter();
+}
+
+article {
+    @include span(6 of 10);
+}
+
+aside {
+    @include span(4 of 10 last);
+}
+
+footer {
+    clear: both;
+}
+
+ul.gallery {
+  padding: span(1 of 8);
+  list-style: none;
+  @include clearfix;
+}
+
+.gallery li {
+  @include gallery(2 of 6);
+  margin-bottom: gutter(6);
+
+  &:nth-last-child(-n + 3) {
+    margin-bottom: 0;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}

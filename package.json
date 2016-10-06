@@ -1,0 +1,31 @@
+{
+  "name": "SASS-test",
+  "version": "0.0.1",
+  "author": "Michael Lines <lines0812@gmail.com>",
+  "description": "testing SASS usage",
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.10"
+  },
+  "scripts": {
+    "build:html": "htmlhint *.html -s",
+    "watch:html": "onchange \"./*.html\" -- npm run build:html -s",
+    "autoprefixer": "postcss -u autoprefixer -r build/css/main.css",
+    "build:css": "node-sass -o build/css src/sass/main.scss && npm run autoprefixer",
+    "watch:css": "onchange \"src/sass/**/*.scss\" -- npm run build:css",
+    "serve": "browser-sync start --server --files \"*.html, build/css/*.css, build/js/*.js\"",
+    "watch:all": "parallelshell \"npm run serve\" \"npm run watch:html\" \"npm run watch:css\""
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.5.0",
+    "browser-sync": "^2.17.0",
+    "htmlhint": "^0.9.13",
+    "node-sass": "^3.10.1",
+    "onchange": "^3.0.2",
+    "parallelshell": "^2.0.0",
+    "postcss-cli": "^2.6.0",
+    "sass-loader": "^4.0.2",
+    "susy": "^2.2.12",
+    "webpack": "^1.13.2"
+  }
+}

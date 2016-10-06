@@ -1,0 +1,33 @@
+@import "imports/reset";
+@import "imports/toolbox";
+@import "imports/susy";
+
+$color1: none;
+$color2: green;
+$color3: lightgreen;
+$color4: orange;
+$color5: lightblue;
+
+main {
+    background-color: $color1;
+}
+
+header {
+    padding: 2em;
+    background-color: $color2;
+}
+
+article {
+    padding: 2em;
+    background-color: $color3;
+}
+
+aside {
+    padding: 2em;
+    background-color: $color5;
+}
+
+footer {
+    padding: 2em;
+    background-color: $color4;
+}

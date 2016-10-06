@@ -1,0 +1,28 @@
+// sets a list to fade any non-selected list items on hover
+@mixin fadeList($blurOpacity, $hoverOpacity) {
+  li {
+    opacity: 1;
+    transition: opacity 0.3s;
+  }
+
+  &:hover,
+  &:focus {
+    li {
+      opacity: $blurOpacity;
+    }
+  }
+
+  li:hover,
+  li:focus {
+    opacity: $hoverOpacity;
+  }
+}
+
+// adjusts the foreground colour based on the lightness of the background colour
+@function set-foreground-color($BGcolor) {
+  @if (lightness($BGcolor) > 50) {
+    @return #000000; // Lighter background returns black
+  } @else {
+    @return #ffffff; // Darker background returns white
+  }
+}
