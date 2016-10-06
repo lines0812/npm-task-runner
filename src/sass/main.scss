@@ -4,7 +4,7 @@
 
 $color1: none;
 $color2: green;
-$color3: lightgreen;
+$color3: orange;
 $color4: orange;
 $color5: lightblue;
 
@@ -30,4 +30,8 @@ aside {
 footer {
     padding: 2em;
     background-color: $color4;
+}
+
+img {
+  border: 2px darkgray solid;
 }
